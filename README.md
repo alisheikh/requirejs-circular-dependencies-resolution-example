@@ -1,2 +1,6 @@
 # requirejs-circular-dependencies-resolution-example
-This sample shows how to resolve circular dependencies with RequireJS
+This sample shows how to resolve circular dependencies in JavaScript prototypical inheritance using RequireJS. 
+
+The sample renders table of visits using knockout.js with following hierarchy:
+
+![diagram](https://github.com/ivanovvitaly/requirejs-circular-dependencies-resolution-example/diagram.png)
