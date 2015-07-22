@@ -3,4 +3,4 @@ This sample shows how to resolve circular dependencies in JavaScript prototypica
 
 The sample renders table of visits using knockout.js with following hierarchy:
 
-![diagram](https://github.com/ivanovvitaly/requirejs-circular-dependencies-resolution-example/diagram.png)
+![](diagram.png?raw=true)
