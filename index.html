@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Require JS Curcular Dependencies</title>
+    
+    <style>
+        table {
+            border-collspan: collspan; 
+            border-spacing: 0;
+            width: 800px;
+            border: 1px solid #D9d9d9;
+        }        
+        thead tr { background-color: #D9d9d9 }
+        td, th { padding:5px; }
+    </style>
+</head>
+<body>
+   <h3>Visits</h3>
+   
+   <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Repeat</th>                
+                <th style="width: 200px">Description</th>
+            </tr>
+        </thead>
+        
+        <tbody data-bind="template: { name: visitDisplayTemplate, foreach: visits }"></tbody>
+    </table>
+    
+    <script type="text/html" id="oneTimeVisitDisplayTemplate">
+        <tr>
+            <td nowrap="nowrap"><strong>One-Time</strong></td>
+            <td nowrap="nowrap" class="text-center" data-bind="text: startDate"></td>
+            <td nowrap="nowrap" class="text-center"> --- </td>
+            <td nowrap="nowrap" class="text-center"> --- </td>
+            <td data-bind="text: summary"></td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="hourlyVisitDisplayTemplate">
+        <tr>
+            <td nowrap="nowrap"><strong>Hourly</strong></td>
+            <td nowrap="nowrap" class="text-center" data-bind="text: startDate"></td>
+            <td nowrap="nowrap" class="text-center" data-bind="text: endDate"></td>
+            <td nowrap="nowrap" class="text-center"> --- </td>
+            <td data-bind="text: summary"></td>
+        </tr>
+    </script>
+
+    <script type="text/html" id="recurrentVisitDisplayTemplate">
+        <tr>
+            <td nowrap="nowrap"><strong>Recurrent</strong></td>
+            <td nowrap="nowrap" class="text-center" data-bind="text: startTime"></td>
+            <td nowrap="nowrap" class="text-center"> --- </td>
+            <td data-bind="text: daysString"></td>            
+            <td data-bind="text: summary"></td>
+        </tr>
+    </script>
+   
+   <script type="text/javascript" src="js/require.js" ></script>
+   <script type="text/javascript" src="js/visits.json" ></script>
+   <script type="text/javascript">
+        require(["js/require.config"], function(){
+             require(["ko", "VisitsViewModel", "domReady!"], function(ko, VisitsViewModel) {                
+                var viewModel = new VisitsViewModel();
+                viewModel.init(Visits)
+                
+                ko.applyBindings(viewModel);
+            });  
+        });             
+   </script>
+</body>
+</html>

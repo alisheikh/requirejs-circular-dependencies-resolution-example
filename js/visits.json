@@ -1,0 +1,20 @@
+var Visits = [
+    {
+        "startDate": "2015-07-21 10:00 AM",
+        "id": 6,
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor luctus erat, non maximus lacus congue quis. Integer ac ullamcorper.",
+        "type": 0
+    }, {
+        "startDate": "2015-07-21 10:00 AM",
+        "endDate": "2015-07-21 2:00 PM",
+        "id": 7,
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor luctus erat, non maximus lacus congue quis. Integer ac ullamcorper.",
+        "type": 1
+    }, {
+        "days": ["Monday", "Friday"],
+        "startTime": "10:00 AM",
+        "id": 8,
+        "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porttitor luctus erat, non maximus lacus congue quis. Integer ac ullamcorper.",
+        "type": 2
+    }
+];
